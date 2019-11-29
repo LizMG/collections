@@ -28,9 +28,9 @@ describe ConcreteTestController do
   def with_test_routing
     with_routing do |map|
       map.draw do
-        get "/test", to: "concrete_test#test"
-        get "/test", to: "concrete_test#json"
-        get "/test", to: "concrete_test#js_or_atom"
+        get "/test", params: { to: "concrete_test#test" }
+        get "/test", params: { to: "concrete_test#json" }
+        get "/test", params: { to: "concrete_test#js_or_atom" }
       end
       yield
     end
